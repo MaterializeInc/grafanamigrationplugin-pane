@@ -5,36 +5,35 @@ import { SimplePanel } from './components/SimplePanel';
 export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setPanelOptions((builder) => {
   return builder
     .addTextInput({
-      path: 'text',
-      name: 'Simple text option',
-      description: 'Description of panel option',
-      defaultValue: 'Default value of text input option',
-    })
-    .addBooleanSwitch({
-      path: 'showSeriesCount',
-      name: 'Show series counter',
-      defaultValue: false,
-    })
-    .addRadio({
-      path: 'seriesCountSize',
-      defaultValue: 'sm',
-      name: 'Series counter size',
+      path: 'preamble',
+      name: 'Preamble',
+      description: 'Text to write before the link to the new dashboard. This can be markdown',
       settings: {
-        options: [
-          {
-            value: 'sm',
-            label: 'Small',
-          },
-          {
-            value: 'md',
-            label: 'Medium',
-          },
-          {
-            value: 'lg',
-            label: 'Large',
-          },
-        ],
+        useTextarea: true,
+        rows: 25,
       },
-      showIf: (config) => config.showSeriesCount,
+    })
+    .addTextInput({
+      path: 'linkText',
+      name: 'Link text',
+      description: 'The text to put on the link to the new dashboard',
+      defaultValue: 'Visit this dashboard in the new location',
+    })
+    .addTextInput({
+      path: 'hostname',
+      name: 'New Grafana hostname:',
+      description: 'The hostname under which the new grafana instance lives',
+    })
+    .addNumberInput({
+      path: 'port',
+      name: "New Grafana instance's port:",
+      description: 'The port under which the new grafana instance lives (usually 443 for https, 80 for http)',
+      defaultValue: 443,
+    })
+    .addTextInput({
+      path: 'protocol',
+      name: "New Grafana instance's URL scheme:",
+      description: 'https or http. You want https.',
+      defaultValue: 'https',
     });
 });

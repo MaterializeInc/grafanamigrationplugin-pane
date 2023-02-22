@@ -1,7 +1,7 @@
-type SeriesSize = 'sm' | 'md' | 'lg';
-
 export interface SimpleOptions {
-  text: string;
-  showSeriesCount: boolean;
-  seriesCountSize: SeriesSize;
+  preamble: string;
+  hostname: string;
+  port: number;
+  protocol: string;
+  linkText: string;
 }
