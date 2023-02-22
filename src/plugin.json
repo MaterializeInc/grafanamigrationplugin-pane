@@ -1,0 +1,25 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "panel",
+  "name": "Grafana Migration Plugin",
+  "id": "materializeinc-grafanamigrationplugin-panel",
+  "info": {
+    "keywords": ["panel"],
+    "description": "A panel displaying a link that takes you to the same dashboard on another grafana instance",
+    "author": {
+      "name": "Materialize inc"
+    },
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=9.2.5",
+    "plugins": []
+  }
+}
